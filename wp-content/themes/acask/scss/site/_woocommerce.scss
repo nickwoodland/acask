@@ -1,0 +1,17 @@
+.woocommerce-breadcrumb, .woocommerce-result-count{
+	display:inline-block;
+	margin-right:$rem-base;
+}
+
+input[type="search"].search-field{
+	margin-bottom:4px;
+}
+
+.woocommerce-message{
+	@extend .pad;
+	@extend .landmark;
+	background-color:$gainsboro;
+}
+.shop_table.cart{
+	width:100%;
+}

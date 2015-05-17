@@ -1,0 +1,34 @@
+.landmark{
+	margin-bottom: $rem-base;
+}
+
+.landmark--half{
+	margin-bottom: $rem-base/2;
+}
+
+.landmark--double {
+	margin-bottom: $rem-base*2;
+}
+
+.pad{
+	padding: $rem-base;
+}
+
+.pad--half{
+	padding: $rem-base/2;
+}
+
+.pad--double{
+	padding: $rem-base*2;
+}
+.text-center {
+	text-align:center;
+}
+
+.negative-offest-left{
+	margin-left:-$rem-base/2;
+}
+
+.negative-offest-right{
+	margin-right:-$rem-base/2;
+}

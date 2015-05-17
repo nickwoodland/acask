@@ -1,0 +1,22 @@
+.button, .btn{
+	border-radius:0px;
+	background-color: $green-color;
+	@extend .pad--half;
+	font-size:$rem-base*0.9;
+	margin-bottom:0px;
+	color:$white;
+	border:none;
+	@include vendor(transition, all 0.5s);
+	&:hover{
+		background-color: lighten($green-color, 10%);
+	}
+}
+
+.button--expand, .btn--expand {
+	display:block;
+	width:100%
+}
+
+button {
+	@extend .button;
+}

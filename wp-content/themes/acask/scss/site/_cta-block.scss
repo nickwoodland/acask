@@ -1,0 +1,13 @@
+.cta-block {
+	    @include vendor(transition, all 0.2s);
+
+	&:hover {
+		@include vendor(transform, scale(1.02));
+	}
+	.cta-block__text{
+		text-align:center;
+		color: $white;
+		background-color:$primary-color;
+		line-height: $rem-base;
+	}
+}

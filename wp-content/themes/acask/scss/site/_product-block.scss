@@ -1,0 +1,35 @@
+.product-block {
+	background-color:$white;
+
+	h3{
+		font-size:$base-font-size;
+		height:($rem-base*2.75);
+		overflow:hidden;
+	}
+
+	.product-block__price{
+		font-size:$base-font-size*0.9;
+
+		span{
+			white-space:nowrap;
+		}
+	}
+
+	.product-block__add-to-cart {
+		.quantity, button{
+			display:inline-block;
+		}
+
+		.quantity input{
+			margin-bottom:0px;
+			height:auto;
+		}
+	}
+
+}
+
+@media only screen and (max-width: $small-breakpoint) {
+	.quantity, .quantity input{
+		width:100%;
+	}
+}
