@@ -15,3 +15,12 @@ input[type="search"].search-field{
 .shop_table.cart{
 	width:100%;
 }
+
+.page-numbers{
+	text-align:center;
+	
+	li{
+		display:inline-block;
+		margin-right:$rem-base/2;
+	}
+}

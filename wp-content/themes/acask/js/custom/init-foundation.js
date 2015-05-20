@@ -1,9 +1,11 @@
 jQuery(document).foundation();
 
 
-$(document).ready(function(){
 
+setTimeout(function() {
+
+	$( ".orbitwrapper" ).fadeIn(500);
+	$(document).foundation('interchange', 'reflow');
 	$(document).foundation('orbit', 'reflow');
 
-
-});
+}, 1000);

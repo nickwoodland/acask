@@ -213,4 +213,6 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+
 ?>

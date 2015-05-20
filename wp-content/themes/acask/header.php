@@ -30,41 +30,45 @@
 		
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
+	<body onload="document.body.setAttribute('class','loaded')" <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>
 	
 	<div class="off-canvas-wrap" data-offcanvas>
-	<div class="inner-wrap">
-	<?php global $woocommerce; ?>
-	<?php do_action( 'foundationpress_layout_start' ); ?>
-	<nav class="tab-bar">
-		<section>
-			<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-		</section>
-		<section class="middle tab-bar-section">
-			
-			<h1 class="title"><?php bloginfo( 'name' ); ?></h1>
+		<div class="inner-wrap">
+			<?php global $woocommerce; ?>
+			<?php do_action( 'foundationpress_layout_start' ); ?>
+			<nav class="tab-bar">
+				<section>
+					<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+				</section>
+				<section class="middle tab-bar-section">
+					
+					<h1 class="title"><?php bloginfo( 'name' ); ?></h1>
 
-		</section>
-		<section class="topbar__cart">
-			<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
-			<i class="fa fa-shopping-cart"></i>
-			<span class="show-for-sr">Cart</span>
-		</a>
-		</section>
+				</section>
+				<section class="topbar__cart">
+					<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+					<i class="fa fa-shopping-cart"></i>
+					<span class="show-for-sr">Cart</span>
+				</a>
+				</section>
 
-	</nav>
+			</nav>
 
-	<div class="header-bg__wrapper show-for-large-up">
-		<div class="pad-wrapper">
+			<div class="text-center show-for-small">
+				<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo( 'name' ); ?></a>
+			</div>
 
-			<?php get_template_part( 'parts/top-bar' ); ?>
+			<div class="header-bg__wrapper show-for-large-up">
+				<div class="pad-wrapper">
 
-		</div>
-	</div>
+					<?php get_template_part( 'parts/top-bar' ); ?>
+
+				</div>
+			</div>
 
 
-	<?php get_template_part( 'parts/off-canvas-menu' ); ?>
+			<?php get_template_part( 'parts/off-canvas-menu' ); ?>
 
 <section class="container" role="document">
 	<?php do_action( 'foundationpress_after_header' ); ?>

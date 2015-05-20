@@ -1,7 +1,7 @@
 <?php $thumbnail_id = get_post_thumbnail_id($post->ID); ?>
 <?php $gallery_ids = $product->get_gallery_attachment_ids(); ?>
 
-<?php if(!empty($gallery_ids || false != $gallery_ids)): ?>
+<?php if(!empty($gallery_ids) || false != $gallery_ids): ?>
 	<?php $slide_ids = $gallery_ids; ?>
 	<?php array_unshift( $slide_ids, $thumbnail_id); ?>
 	<div class="product-slider__wrapper landmark">

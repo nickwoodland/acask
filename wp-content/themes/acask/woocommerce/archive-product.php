@@ -99,8 +99,12 @@ get_header(); ?>
 					<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
 			<?php endif; ?>
+			<div class="landmark">
+				<?php woocommerce_pagination(); ?>
+			</div>
 		</div>
 
+		
 		<?php
 			/**
 			 * woocommerce_sidebar hook

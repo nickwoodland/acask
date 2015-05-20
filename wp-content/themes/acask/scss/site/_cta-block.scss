@@ -1,9 +1,17 @@
 .cta-block {
-	    @include vendor(transition, all 0.2s);
+
+	@include vendor(transition, all 0.15s);
 
 	&:hover {
 		@include vendor(transform, scale(1.02));
 	}
+
+	img:hover{
+		@include vendor(transform, scale(1.005));
+	}
+
+	background-color: $primary-color;
+
 	.cta-block__text{
 		text-align:center;
 		color: $white;

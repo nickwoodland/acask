@@ -26,7 +26,7 @@
 		position:absolute;
 		font-size:1.4em;
 		font-weight:200;
-		color: $primary-color;
+		color: $dark-text;
 		width:33%;
 		left:58%;
 		bottom: 25%;
@@ -43,8 +43,28 @@
 	left:25%;
 	bottom: 25%;
 	text-align:center;
+	@include vendor(transition-delay, 1s);
+	@include vendor(transition, all 1s);
+
+}
+
+.hero-banner .hero-cta{	
+	@include vendor(transform, translateX(1000px));
+}
+
+body.loaded .hero-banner .hero-cta{
+	@include vendor(transform, translateX(0px));
+}
 
 
+.slider-container .slider__slide .hero-cta {
+	@include vendor(opacity, 0);
+
+}
+
+body.loaded .slider__slide.active .hero-cta {
+		@include vendor(transition-delay, 1s);
+	@include vendor(opacity, 1);
 }
 
 @media only screen and (max-width: $medium-breakpoint) {

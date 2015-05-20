@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-	<div class="small-12 columns" role="main">
+	<div class="small-12 columns landmark" role="main">
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
 

@@ -11,14 +11,13 @@
 function cmb_banner_metaboxes( array $meta_boxes ) {
 	
 	$prefix = '_banner_';
-	$front_page_id = get_page_by_title( 'Front Page' )->ID;
-	
+	$front_page_id = get_page_by_title( 'Front Page' )->ID;	
 	
     $meta_boxes[] = array(
 		'id' => $prefix.'meta',
 		'title' => 'Banner',
+		'hide_on' => array('id' => array($front_page_id)),
 		'pages' => array( 'page', 'product' ),
-		'hide_on' => array('id' => $front_page_id),
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true,

@@ -2,12 +2,14 @@
 	font-weight:400;
 	li a{
 
+		font-size:16px;
 		color:$dark-text;
 
-		@include vendor(transition, all 0.25s);
+		@include vendor(transition, all 0.15s);
 
 		&:hover {
 			color: lighten($dark-text, 20%);
+			margin-bottom: -2px;
 		}
 	}
 
@@ -18,47 +20,67 @@
 
 }
 
-.menu-offcanvas-container{
-	@extend .pad;
-
-	ul{
-		margin-left:0px;
-	}
-	li{
-		@extend .landmark;
-		list-style:none;
-		padding-bottom: $rem-base;
-		border-bottom:1px solid $primary-color;
-		a {
-			display:block;
-			color: $white;
+@media only screen and (min-width: $large-breakpoint) {
+	.menu-primary-nav-container {	
+		li a{
+			font-size:20px;
 		}
 	}
 }
 
+
+
 .topbar__search--link, .topbar__checkout--link{
-	display:inline-block;
-	@extend .pad--half;
-	line-height:$rem-base*2;
-    transition: all 0.5;
-    width:$rem-base*2;
-    height:$rem-base*2;
+	position:absolute;
+	top:$rem-base;
 
-    a i {
-    	color:$dark-text;
-    	@include vendor(transition, all 0.25s);
-		&:hover {
-			color: lighten($dark-text, 20%);
-		}	
+
+    a {
+    	color:$dark-text;  
+    	padding:9px;
+		border-radius: 1000px;
+
+		@include vendor(transition, all 0.25s);
+
+	    &:hover {
+			color: $secondary-color;
+			background-color: $dark-text
+
+		}  	
+
     }
-    
+
+    i{
+    	font-size:$rem-base;
+    	width:$rem-base;
+    	height:$rem-base;
+
+	}
 
 
+}
+
+@media only screen and (min-width: $large-breakpoint) {
+	.topbar__search--link, .topbar__checkout--link{
+		top:20px;
+	}
+}
+
+.topbar__search--link{
+	right:48px;
+}
+
+.topbar__checkout--link{
+	right:4px
 }
 
 .nav__icons{
 	text-align:right;
 }
+
+
+
+// sidebar
 
 #sidebar{
 	padding-left:$rem-base;
@@ -87,6 +109,8 @@
 		font-size:rem-calc($rem-base*0.9);
 	}
 }
+
+//offcanvas
 
 .offcanvas__search--wrapper{
 	position:relative;

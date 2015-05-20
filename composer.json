@@ -29,9 +29,7 @@
     "require": {
         "BurfieldCreative/BC-Responsive-Images": "~2.0.0",
         "BurfieldCreative/bc-sliders": "~1.0.0",
-		
-        "wpackagist-plugin/advanced-sitemap-generator": "~1.1.0",
-        
+
         "wpackagist-plugin/disable-comments": "~1.3",
         "wpackagist-plugin/disable-users" : "~1.0.0",
         "wpackagist-plugin/disable-wordpress-plugin-updates":"~1.4",
