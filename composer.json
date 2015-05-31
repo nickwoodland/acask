@@ -45,7 +45,6 @@
         
         "wpackagist-plugin/user-role-editor": "~4.18.0",
         "wpackagist-plugin/user-switching" : "~1.0.0",
-        "wpackagist-plugin/ultimate-coming-soon-page": "1.14.2",
         
         "wpackagist-plugin/w3-total-cache": "~0.9.0",
         "wpackagist-plugin/woocommerce": "2.3.8",

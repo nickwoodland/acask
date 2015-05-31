@@ -36,4 +36,26 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
 
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ * Remove WooCommerce lightbox for mobiles.
+ *
+ */
+function woo_remove_lightbox_for_mobiles() {
+  
+	if ( wp_is_mobile() ) { // Place your own conditions here
+		
+    // Styles
+	  wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
+	
+	  // Javascripts
+	  wp_dequeue_script( 'prettyPhoto' );
+	  wp_dequeue_script( 'prettyPhoto-init' );
+	
+	} // endif
+}
+
+add_action( 'wp_enqueue_scripts', 'woo_remove_lightbox_for_mobiles', 99 );
+
 ?>

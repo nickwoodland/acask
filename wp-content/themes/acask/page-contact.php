@@ -31,15 +31,13 @@ $strapline = ($page_meta['_banner_strapline_text'][0] != '' ? $page_meta['_banne
 				<div class="row">
 					<div class="columns medium-6">
 						<?php include(locate_template('parts/vcard.php')); ?>
+						<?php wpautop(the_content()); ?>
 					</div>
 					<div class="columns medium-6">
 						<section class="contact__form">
 							<?php  gravity_form( 'Contact', $display_title = false, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false); ?>
 						</section>
 					</div>
-				</div>
-				<div class="row entry-content landmark">
-					<?php wpautop(the_content()); ?>
 				</div>
 				<footer>
 					<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

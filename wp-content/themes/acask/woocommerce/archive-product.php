@@ -40,8 +40,8 @@ get_header(); ?>
     $hero_img = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true ); 
     ?>
 
-    <?php $strapline = $cat->name; ?>
-    <?php $content = $cat->description; ?>
+    <?php $strapline = $cat->description; ?>
+    <?php $content = false ?>
 
 <?php endif; ?>
 
@@ -71,7 +71,7 @@ get_header(); ?>
 	</div>
 	<div class="row">
 
-		<div class="small-12 large-9 columns negative-offest-left" role="main">
+		<div class="small-12 large-9 columns products-list negative-offest-left" role="main">
 
 			<?php if ( have_posts() ) : ?>
 

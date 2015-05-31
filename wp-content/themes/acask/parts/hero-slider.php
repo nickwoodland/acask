@@ -48,7 +48,7 @@
 									'name' => 'large',
 									'breakpoint' => 1025,
 									'width' => 2000,
-									'height' => 600,
+									'height' => 450,
 									'crop' => true,
 									'resize' => true,
 								),

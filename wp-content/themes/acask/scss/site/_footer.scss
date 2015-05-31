@@ -8,8 +8,20 @@
 footer{
 	color: $white;
 	background-color:$primary-color;
+	background-image: url("../assets/img/strapline-texture.png");
+	background-position:center;
+	background-repeat:repeat-y;
+	font-family: Verdana,Geneva,sans-serif;
+
+	span, a {
+		margin-right:$rem-base/2;
+		font-size: 18px;
+		font-weight:500;
+
+	}
 	a {
 		color: $white;
+
 
 		&:hover {
 			color:$gainsboro;

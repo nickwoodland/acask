@@ -4,7 +4,6 @@
 <footer class="pad">
 	<div class="row">
 		<?php do_action( 'foundationpress_before_footer' ); ?>
-			<div class="columns medium-8">
 				<?php if(of_get_option( 'contact_address_street_address_1' ) || of_get_option( 'contact_address_street_address_2' )) : ?>
 					<span class="address__line" itemprop="streetAddress">
 						
@@ -34,8 +33,6 @@
 				<?php if(of_get_option( 'contact_address_post_code' )) : ?>
 					<span itemprop="postalCode"><?php echo of_get_option( 'contact_address_post_code' ); ?></span>
 				<?php endif; ?>
-			</div>
-			<section class="columns medium-4">
 				<?php if("" != $email && false != $email): ?>
 		            <span><strong>E: </strong><a href="mailto:<?php echo antispambot($email); ?>"><?php echo antispambot($email); ?></a></span>
 		        <?php endif; ?>
@@ -43,9 +40,6 @@
 		        <?php if("" != $tel && false != $tel): ?>
 		            <span><strong>T: </strong><a href="tel:<?php echo $tel; ?>"><?php echo $tel; ?></a></span>
 		        <?php endif; ?>
-
-
-	        </section>
 		<?php do_action( 'foundationpress_after_footer' ); ?>
 	</div>
 </footer>
