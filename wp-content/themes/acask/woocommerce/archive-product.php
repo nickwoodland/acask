@@ -58,13 +58,13 @@ get_header(); ?>
 	<div class="row">
 		<div class="columns small-12 large-9 negative-offest-left">
 			<div class="row">
-				<div class="columns small-12 medium-9">
+				<div class="columns small-12">
 					<?php woocommerce_breadcrumb(); ?>
 					<?php woocommerce_result_count(); ?>
 				</div>
-				<div class="columns small-12 medium-3">
+				<?php /*<div class="columns small-12 medium-3">
 					<?php woocommerce_catalog_ordering(); ?>
-				</div>
+				</div> */?>
 			</div>
 		</div>
 
