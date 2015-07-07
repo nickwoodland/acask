@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php 
 
-$product_regular_price = ($product_meta['_regular_price'][0] != '' ? $product->get_price_including_tax(1, $product_meta['_regular_price'][0]) : false);
-$product_sale_price = ($product_meta['_sale_price'][0] != '' ? $product->get_price_including_tax(1, $product_meta['_sale_price'][0]) : false);
+$product_regular_price = ($product_meta['_regular_price'][0] != '' ? $product_meta['_regular_price'][0] : false);
+$product_sale_price = ($product_meta['_sale_price'][0] != '' ? $product_meta['_sale_price'][0] : false);
 ?>
 
 <?php $product_type = false; ?>

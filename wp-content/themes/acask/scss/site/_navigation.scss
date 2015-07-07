@@ -86,8 +86,7 @@ dropdown functionality from foundations topbar. It's very insistent on it's styl
 
 
 .topbar__search--link, .topbar__checkout--link{
-	position:absolute;
-	top:4px;
+	display:inline-block;
 
 
     a {
@@ -116,16 +115,9 @@ dropdown functionality from foundations topbar. It's very insistent on it's styl
 }
 
 
-.topbar__search--link{
-	right:48px;
-}
-
-.topbar__checkout--link{
-	right:4px
-}
-
 .nav__icons{
 	text-align:right;
+	padding-top:8px;
 }
 
 

@@ -26,6 +26,14 @@
 			<span class="show-for-sr">Cart</span>
 		</a>
 	</div>
+	<?php if ( sizeof( $woocommerce->cart->cart_contents) > 0 ) : ?>
+		<div class="topbar__checkout--link">
+			<a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>">
+				<i class="fa fa-sign-out"></i>
+				<span class="show-for-sr">Checkout</span>
+			</a>
+		</div>
+	<?php endif; ?>
 </div>
 
 

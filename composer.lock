@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b8f8e5a784f4a02d587bce7c2de9319",
+    "hash": "b6eb271d9ee950f37d37f457510b0c6f",
     "packages": [
         {
             "name": "BurfieldCreative/BC-Responsive-Images",
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "a66f93a541c2214b4865161426b077e2b7d951de"
+                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/a66f93a541c2214b4865161426b077e2b7d951de",
-                "reference": "a66f93a541c2214b4865161426b077e2b7d951de",
+                "url": "https://api.github.com/repos/composer/installers/zipball/e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
+                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
                 "shasum": ""
             },
             "replace": {
@@ -147,27 +147,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-04-21 19:54:55"
-        },
-        {
-            "name": "wpackagist-plugin/advanced-sitemap-generator",
-            "version": "1.1.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/advanced-sitemap-generator/",
-                "reference": "tags/1.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-sitemap-generator.1.1.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-sitemap-generator/"
+            "time": "2015-06-13 15:30:38"
         },
         {
             "name": "wpackagist-plugin/disable-comments",
@@ -191,15 +171,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-users",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-users/",
-                "reference": "tags/1.0.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-users.1.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-users.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -291,15 +271,15 @@
         },
         {
             "name": "wpackagist-plugin/posts-to-posts",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/posts-to-posts/",
-                "reference": "tags/1.6.3"
+                "reference": "tags/1.6.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/posts-to-posts.1.6.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/posts-to-posts.1.6.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -311,7 +291,7 @@
         },
         {
             "name": "wpackagist-plugin/taxonomy-terms-order",
-            "version": "1.4.1",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/taxonomy-terms-order/",
@@ -328,26 +308,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/taxonomy-terms-order/"
-        },
-        {
-            "name": "wpackagist-plugin/ultimate-coming-soon-page",
-            "version": "1.14.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/ultimate-coming-soon-page/",
-                "reference": "tags/1.14.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-coming-soon-page.1.14.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ultimate-coming-soon-page/"
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
@@ -371,15 +331,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.0.5"
+                "reference": "tags/1.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.0.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.0.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -576,6 +536,7 @@
     "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
