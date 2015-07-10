@@ -4,9 +4,15 @@ function shipping_switch( $rates, $package  ) {
   global $woocommerce;
   global $wp_query;
 
-  $cart_contents = reset($woocommerce->cart->cart_contents);
+  $cart_contents_group = $woocommerce->cart->cart_contents;
+  $cart_total_w_tax=0;
 
-  $cart_total_w_tax = $cart_contents['line_total'] + $cart_contents['line_tax'];
+  foreach($cart_contents_group as $cart_contents):
+
+      $cart_total_w_tax += $cart_contents['line_total'] + $cart_contents['line_tax'];
+
+  endforeach;
+
 
   if($cart_total_w_tax <= 89.99 ):
 
