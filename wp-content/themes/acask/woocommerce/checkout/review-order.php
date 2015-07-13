@@ -34,7 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 						</td>
 						<td class="product-total">
-							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+							<?php // echo  apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+							<?php echo "<strong>".wc_price($cart_item['line_subtotal'])." </strong>"; ?>
+							<?php echo "<small><Strong> + VAT( ".wc_price($cart_item['line_subtotal_tax'])." )</strong></small>"; ?>
+
 						</td>
 					</tr>
 					<?php
