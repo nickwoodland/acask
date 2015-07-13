@@ -79,8 +79,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<td class="product-price">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+							// echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
+						<?php echo "<strong>".wc_price($cart_item['line_subtotal'])." </strong>"; ?>
+							<?php echo "<small><Strong> + VAT( ".wc_price($cart_item['line_subtotal_tax'])." )</strong></small>"; ?>
 					</td>
 
 					<td class="product-quantity">
