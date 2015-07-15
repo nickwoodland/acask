@@ -28,3 +28,17 @@ input[type="search"].search-field{
 .products-list{
 	min-height:330px;
 }
+
+tr.cart_item{
+	td{
+		position:relative;
+
+		.product-price__inc-vat, .product-subtotal__inc-vat, .product-inc-vat__label{
+
+			position:absolute;
+			bottom:$rem-base;
+		}
+
+
+	}
+}
