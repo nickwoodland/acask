@@ -39,6 +39,7 @@ require_once('library/frontpage-meta.php');
 
 // Add Front page CMBS
 require_once('library/best-sellers-meta.php');
+require_once('library/special-offers-meta.php');
 
 // Add global CMBS
 require_once('library/global-meta.php');

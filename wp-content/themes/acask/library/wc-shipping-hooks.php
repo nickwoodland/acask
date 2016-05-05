@@ -29,20 +29,20 @@ function shipping_switch( $rates, $package  ) {
     unset($rates['less_than_90']);
     unset($rates['90_to_600']);
 
-  endif; 
+  endif;
 
 
   /*$current_order_id = $wp_query->query['order-pay'];
   $order_object = get_post($current_order_id);
   $order_status = $order_object->post_status;
-  
+
   $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
   $current_shipping_cost = WC()->session->get( 'shipping_total' );
 
-  if ($chosen_methods[0] == 'international_delivery' && $order_status != 'wc-pending') : 
+  if ($chosen_methods[0] == 'international_delivery' && $order_status != 'wc-pending') :
     //only invoice
     $available_gateways = array('invoice' => $available_gateways['invoice']);
-  
+
   else:
 
     unset($available_gateways['invoice']);
@@ -52,5 +52,26 @@ function shipping_switch( $rates, $package  ) {
   return $rates;
 }
 
-add_filter( 'woocommerce_package_rates', 'shipping_switch', 10, 2 ); 
-?>
+add_filter( 'woocommerce_package_rates', 'shipping_switch', 10, 2 );
+
+
+// alter the subscriptions error
+function my_woocommerce_add_error( $error ) {
+    print_r($error);
+    if( false !== strpos($error, 'Please enter an alternative shipping address.')) {
+        $error = '<strong style="font-size:18px;">Unfortunately, we only offer shipping to the UK through our website. For the shipping of products outside the UK please contact our office on 00 44 (0)1308 426 982 or email us at <a href="mailto:sales@acask.com">sales@acask.com</a>.</strong>';
+    }
+    return $error;
+}
+add_filter( 'woocommerce_add_error', 'my_woocommerce_add_error', 10, 2 );
+
+
+add_filter( 'gettext', 'custom_paypal_button_text', 20, 3 );
+function custom_paypal_button_text( $translated_text, $text, $domain ) {
+	switch ( $translated_text ) {
+		case 'Proceed to PayPal' :
+			$translated_text = __( 'Proceed to Payment', 'woocommerce' );
+			break;
+	}
+	return $translated_text;
+}
