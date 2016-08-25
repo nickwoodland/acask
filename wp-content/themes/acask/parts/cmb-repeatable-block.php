@@ -9,8 +9,8 @@
 			            	
 							array(
 								'name' => 'small',
-								'width' => 265,
-								'height' => 199,
+								'width' => 300,
+								'height' => 225,
 								'crop' => true,
 								'resize' => true,
 							),

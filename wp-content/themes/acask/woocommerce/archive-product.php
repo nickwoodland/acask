@@ -40,8 +40,8 @@ get_header(); ?>
     $hero_img = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true ); 
     ?>
 
-    <?php $strapline = $cat->name; ?>
-    <?php $content = $cat->description; ?>
+    <?php $strapline = $cat->description; ?>
+    <?php $content = false ?>
 
 <?php endif; ?>
 
@@ -58,20 +58,20 @@ get_header(); ?>
 	<div class="row">
 		<div class="columns small-12 large-9 negative-offest-left">
 			<div class="row">
-				<div class="columns small-12 medium-9">
+				<div class="columns small-12">
 					<?php woocommerce_breadcrumb(); ?>
 					<?php woocommerce_result_count(); ?>
 				</div>
-				<div class="columns small-12 medium-3">
+				<?php /*<div class="columns small-12 medium-3">
 					<?php woocommerce_catalog_ordering(); ?>
-				</div>
+				</div> */?>
 			</div>
 		</div>
 
 	</div>
 	<div class="row">
 
-		<div class="small-12 large-9 columns negative-offest-left" role="main">
+		<div class="small-12 large-9 columns products-list negative-offest-left" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -99,8 +99,12 @@ get_header(); ?>
 					<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
 			<?php endif; ?>
+			<div class="landmark">
+				<?php woocommerce_pagination(); ?>
+			</div>
 		</div>
 
+		
 		<?php
 			/**
 			 * woocommerce_sidebar hook

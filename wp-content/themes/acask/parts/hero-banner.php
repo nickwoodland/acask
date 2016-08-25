@@ -5,17 +5,17 @@
             
                 array(
                     'name' => 'small',
-                    'width' => 640,
-                    'height' => 213,
+                    'width' => 820,
+                    'height' => 185,
                     'crop' => true,
                     'resize' => true,
                 ),
 
                 array(
                     'name' => 'medium',
-                    'breakpoint' => 640,
+                    'breakpoint' => 820,
                     'width' => 1024,
-                    'height' => 341,
+                    'height' => 230,
                     'crop' => true,
                     'resize' => true,
                 ),
@@ -24,10 +24,11 @@
                     'name' => 'large',
                     'breakpoint' => 1025,
                     'width' => 2000,
-                    'height' => 600,
+                    'height' => 450,
                     'crop' => true,
                     'resize' => true,
                 ),
+                
             ),
 
             'ie_fallback' => 'large',

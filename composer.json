@@ -1,66 +1,60 @@
 {
     "name": "nickwoodland/www.acask.dev",
-    "authors": [
-        {
-            "name": "Nick Woodland",
-            "email": "nickwoodland@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Nick Woodland",
+        "email": "nickwoodland@gmail.com"
+    }],
     "extra": {
         "installer-paths": {
             "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
         }
     },
     "minimum-stability": "dev",
-    "repositories":[
-        {
-            "type":"composer",
-            "url":"http://wpackagist.org"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:BurfieldCreative/bc-sliders.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:BurfieldCreative/BC-Responsive-Images.git"
-        }
-    ],
+    "repositories": [{
+        "type": "composer",
+        "url": "http://wpackagist.org"
+    }, {
+        "type": "git",
+        "url": "git@github.com:BurfieldCreative/bc-sliders.git"
+    }, {
+        "type": "git",
+        "url": "git@github.com:BurfieldCreative/BC-Responsive-Images.git"
+    }],
     "require": {
         "BurfieldCreative/BC-Responsive-Images": "~2.0.0",
         "BurfieldCreative/bc-sliders": "~1.0.0",
-		
+
         "wpackagist-plugin/advanced-sitemap-generator": "~1.1.0",
-        
-        "wpackagist-plugin/disable-comments": "~1.3",
-        "wpackagist-plugin/disable-users" : "~1.0.0",
-        "wpackagist-plugin/disable-wordpress-plugin-updates":"~1.4",
-        "wpackagist-plugin/duplicate-post" : "~2.6.0",
-        
+
+        "wpackagist-plugin/disable-comments": "~1.5",
+        "wpackagist-plugin/disable-users": "~1.0.0",
+        "wpackagist-plugin/disable-wordpress-plugin-updates": "~1.4",
+        "wpackagist-plugin/duplicate-post": "~2.6.0",
+
         "wpackagist-plugin/google-analytics-for-wordpress": "~5.4.0",
-        
+
         "wpackagist-plugin/imsanity": "~2.3.0",
-        
-        "wpackagist-plugin/posts-to-posts":"~1.6.0",
-        
+
+        "wpackagist-plugin/posts-to-posts": "~1.6.0",
+
         "wpackagist-plugin/taxonomy-terms-order": "~1.4.0",
-        
-        "wpackagist-plugin/user-role-editor": "~4.18.0",
-        "wpackagist-plugin/user-switching" : "~1.0.0",
-        "wpackagist-plugin/ultimate-coming-soon-page": "1.14.2",
-        
+
+        "wpackagist-plugin/user-role-editor": "~4.27.0",
+        "wpackagist-plugin/user-switching": "~1.0.0",
+        "wpackagist-plugin/ultimate-coming-soon-page": "~1.16.2",
+
         "wpackagist-plugin/w3-total-cache": "~0.9.0",
-        "wpackagist-plugin/woocommerce": "2.3.8",
-        "wpackagist-plugin/wordpress-seo":"~2.1.0",
-        "wpackagist-plugin/wp-thumb":"0.x"
-        
+        "wpackagist-plugin/woocommerce": "~2.6.0",
+        "wpackagist-plugin/wordpress-seo": "~3.4.0",
+        "wpackagist-plugin/wp-thumb": "0.x"
+
     },
     "require-dev": {
         "wpackagist-plugin/developer": "~1.2",
         "wpackagist-plugin/blackbox-debug-bar": "~0.1.3",
-		"wpackagist-plugin/regenerate-thumbnails" : "~2.2.0",
-		"wpackagist-plugin/rewrite-rules-inspector" : "~1.2.0",
-		"wpackagist-plugin/simply-show-ids" : "~1.3.0"
+        "wpackagist-plugin/regenerate-thumbnails": "~2.2.0",
+        "wpackagist-plugin/rewrite-rules-inspector": "~1.2.0",
+        "wpackagist-plugin/simply-show-ids": "~1.3.0"
     },
     "autoload": {
         "psr-0": {

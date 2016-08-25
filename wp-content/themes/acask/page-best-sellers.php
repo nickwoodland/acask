@@ -42,20 +42,33 @@ $strapline = ($page_meta['_banner_strapline_text'][0] != '' ? $page_meta['_banne
 			</p>
 		<?php endif; ?>
 		<div class="small-12 columns negative-offest-left" role="main">
-			<?php 
 
-			$bestsellers_args = array(
-				'post_type' => 'product',
-				'posts_per_page' => 12,
-				'meta_key' => 'total_sales',
-				'orderby' => 'meta_value_num',
-			);
+			<?php $bestsellers = get_post_meta( $post->ID, '_bestsellers_products_group', false ); ?>
 
-			$bestseller_posts = new WP_Query($bestsellers_args);
-			$wp_query = $bestseller_posts;
-			$posts = $wp_query->get_posts(); 
 
-			?>
+			 <?php // $bestseller_ids = array_values($bestsellers); ?>
+
+			 <?php $bestseller_ids = array(); ?>
+
+			 <?php foreach($bestsellers as $bestseller): ?>
+			 	<?php $bestseller_ids[] = $bestseller['_bestsellers_product_select']; ?>
+			 <?php endforeach; ?>
+
+			<?php if(!empty($bestseller_ids)) : ?>
+				<?php $bestsellers_args = array(
+					'post_type' => 'product',
+					'posts_per_page' => 12,
+					'post__in' => $bestseller_ids,
+					'meta_key' => 'total_sales',
+					'orderby' => 'meta_value_num',
+				);
+
+				$bestseller_posts = new WP_Query($bestsellers_args);
+				$wp_query = $bestseller_posts;
+				$posts = $wp_query->get_posts(); 
+				?>
+			<?php endif; ?>
+			
 			<?php if ( have_posts() ) : ?>
 
 				<?php woocommerce_product_subcategories(); ?>

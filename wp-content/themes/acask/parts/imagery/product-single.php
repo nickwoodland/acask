@@ -1,7 +1,7 @@
 <?php $thumbnail_id = get_post_thumbnail_id($post->ID); ?>
 <?php $gallery_ids = $product->get_gallery_attachment_ids(); ?>
 
-<?php if(!empty($gallery_ids || false != $gallery_ids)): ?>
+<?php if(!empty($gallery_ids) || false != $gallery_ids): ?>
 	<?php $slide_ids = $gallery_ids; ?>
 	<?php array_unshift( $slide_ids, $thumbnail_id); ?>
 	<div class="product-slider__wrapper landmark">
@@ -29,7 +29,7 @@
 							array(
 								'name' => 'small',
 								'width' => 577,
-								'height' => 433,
+								'height' => 462,
 								'crop' => true,
 								'resize' => true,
 							),
@@ -38,7 +38,7 @@
 								'name' => 'medium',
 								'breakpoint' => 640,
 								'width' => 370,
-								'height' => 278,
+								'height' => 296,
 								'crop' => true,
 								'resize' => true,
 							),
@@ -47,7 +47,7 @@
 								'name' => 'large',
 								'breakpoint' => 1025,
 								'width' => 375,
-								'height' => 281,
+								'height' => 300,
 								'crop' => true,
 								'resize' => true,
 							),
@@ -61,8 +61,10 @@
 				    	<?php $sets[] = '['.$img_set['src'].', ('.$break_name.')]'; ?>    
 				    <?php endforeach; ?>
 				    
+				    <?php $lightbox_img = wp_get_attachment_image_src($slide_id, 'full'); ?>
+
 	                <li data-orbit-slide="<?php echo $slide_id; ?>" class="slider__slide">
-	                	<img src="<?php echo $slide->image_src[0]; ?>" data-interchange="<?php echo implode( ',', $sets ); ?>">	   
+	                	<a data-rel="prettyPhoto" href="<?php echo $lightbox_img[0]; ?>"><img src="<?php echo $slide->image_src[0]; ?>" data-interchange="<?php echo implode( ',', $sets ); ?>"></a>	   
 	                </li>
 
 	        <?php endforeach; ?> 
@@ -109,33 +111,32 @@
     	'image' => $thumbnail_id,
     	'settings' => array(
             	
-				array(
-					'name' => 'small',
-					'width' => 265,
-					'height' => 199,
-					'crop' => true,
-					'resize' => true,
-				),
-
-				array(
-					'name' => 'medium',
-					'breakpoint' => 640,
-					'width' => 300,
-					'height' => 225,
-					'crop' => true,
-					'resize' => true,
-				),
-				
-				array(
-					'name' => 'large',
-					'breakpoint' => 1025,
-					'width' => 375,
-					'height' => 281,
-					'crop' => true,
-					'resize' => true,
-				),
-
+			array(
+				'name' => 'small',
+				'width' => 577,
+				'height' => 462,
+				'crop' => true,
+				'resize' => true,
 			),
+
+			array(
+				'name' => 'medium',
+				'breakpoint' => 640,
+				'width' => 370,
+				'height' => 296,
+				'crop' => true,
+				'resize' => true,
+			),
+			
+			array(
+				'name' => 'large',
+				'breakpoint' => 1025,
+				'width' => 375,
+				'height' => 300,
+				'crop' => true,
+				'resize' => true,
+			),
+		)
     );
     $ri = BC_Responsive_Images::get_instance(); 
     $image_data = $ri->image_data( $args );    
@@ -144,6 +145,6 @@
     <?php foreach( $image_data['sized_imagery'] AS $break_name => $img_set ) : ?>    
     	<?php $sets[] = '['.$img_set['src'].', ('.$break_name.')]' ?>    
     <?php endforeach; ?>
-    
-    <img class="" data-interchange="<?php echo implode( ',', $sets ); ?>">
+    <?php $lightbox_img = wp_get_attachment_image_src($thumbnail_id, 'full'); ?>
+    <a data-rel="prettyPhoto" href="<?php echo $lightbox_img[0]; ?>"><img class="" data-interchange="<?php echo implode( ',', $sets ); ?>"></a>
 <?php endif; ?>

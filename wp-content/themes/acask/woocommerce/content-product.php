@@ -19,6 +19,7 @@ $product_meta = get_post_meta($post->ID);
 $product_regular_price = ($product_meta['_regular_price'][0] != '' ? $product_meta['_regular_price'][0] : false);
 $product_sale_price = ($product_meta['_sale_price'][0] != '' ? $product_meta['_sale_price'][0] : false);
 
+
 // Ensure visibility
 if ( ! $product || ! $product->is_visible() )
 	return;

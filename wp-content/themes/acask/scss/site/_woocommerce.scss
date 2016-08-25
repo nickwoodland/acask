@@ -15,3 +15,30 @@ input[type="search"].search-field{
 .shop_table.cart{
 	width:100%;
 }
+
+.page-numbers{
+	text-align:center;
+	
+	li{
+		display:inline-block;
+		margin-right:$rem-base/2;
+	}
+}
+
+.products-list{
+	min-height:330px;
+}
+
+tr.cart_item{
+	td{
+		position:relative;
+
+		.product-price__inc-vat, .product-subtotal__inc-vat, .product-inc-vat__label{
+
+			position:absolute;
+			bottom:$rem-base;
+		}
+
+
+	}
+}

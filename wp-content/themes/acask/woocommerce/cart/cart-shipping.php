@@ -73,13 +73,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php if ( is_cart() ) : ?>
 
 				<?php echo apply_filters( 'woocommerce_cart_no_shipping_available_html',
-					'<p>' . __( 'There are no shipping methods available. Please double check your address, or contact us if you need any help.', 'woocommerce' ) . '</p>'
+					'<p>' . __( 'You have ordered a item that is outside of our European postage range. Can you please call our office on <a href="tel:01308426982">01308 426 982</a> or email <a href="mailto:sales@acask.com">sales@acask.com</a> for further details on shipping your item.', 'woocommerce' ) . '</p>'
 				); ?>
 
 			<?php else : ?>
 
 				<?php echo apply_filters( 'woocommerce_no_shipping_available_html',
-					'<p>' . __( 'There are no shipping methods available. Please double check your address, or contact us if you need any help.', 'woocommerce' ) . '</p>'
+					'<p>' . __( 'You have ordered a item that is outside of our European postage range. Can you please call our office on <a href="tel:01308426982">01308 426 982</a> or email <a href="mailto:sales@acask.com">sales@acask.com</a> for further details on shipping your item.', 'woocommerce' ) . '</p>'
 				); ?>
 
 			<?php endif; ?>

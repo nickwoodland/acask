@@ -24,14 +24,16 @@ $product_banner_text = ($product_meta['_banner_banner_text'][0] != '' ? $product
 $product_strapline_text = ($product_meta['_banner_strapline_text'][0] != '' ? $product_meta['_banner_strapline_text'][0] : false);
 ?>
 
+<div class="hero-banner__wrapper landmark">
 <?php if($product_banner_image&& wp_get_attachment_image_src($product_banner_image)): ?>
- 	<div class="hero-banner__wrapper landmark--double">
+ 	
 	 	<?php $hero_img = $product_banner_image; ?>
 	 	<?php $content = $product_banner_text; ?>
 	 	<?php $strapline = $product_strapline_text; ?>
 		<?php include(locate_template('parts/hero-banner.php')); ?>
-	</div>
 <?php endif; ?>
+</div>
+
 
 <div class="pad-wrapper">
 	<div class="row">

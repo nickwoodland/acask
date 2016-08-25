@@ -11,8 +11,7 @@
 function cmb_front_page_metaboxes( array $meta_boxes ) {
 	
 	$prefix = '_front_page_';
-	$front_page_id = get_page_by_title( 'Front Page' )->ID;
-	
+	$front_page_id = get_page_by_title( 'Front Page' )->ID;	
 	
     $meta_boxes[] = array(
 		'id' => $prefix.'content_blocks',

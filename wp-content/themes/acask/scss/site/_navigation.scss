@@ -1,64 +1,128 @@
+/* sorry for all the important overrides here. Everything was going smoothly until I needed only the 
+dropdown functionality from foundations topbar. It's very insistent on it's styling (bloody mess) */
+
 .menu-primary-nav-container {
-	font-weight:400;
+	@extend .top-bar-section;
+	font-weight:500;
+	li{
+		margin-left:0px !important;
+		padding:($rem-base*1.375)/2 !important;
+	}
 	li a{
-
+		padding:0px;
+		background:none !important;
+		font-size:16px !important;
+		line-height:16px !important;
+		font-family: 'Roboto', sans-serif;
 		color:$dark-text;
+		font-weight:400 !important;
 
-		@include vendor(transition, all 0.25s);
+		@include vendor(transition, all 0.15s);
 
 		&:hover {
 			color: lighten($dark-text, 20%);
 		}
+
+		&:after{
+			display:none !important;
+		}
 	}
 
 	ul{
-		margin-left:-$rem-base*1.375;
+		display:block !important;
+		margin-left:-($rem-base*1.375)/2 !important;
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+
+	.sub-menu {
+		@extend .dropdown;
+		left:11px;
+		top:38px;
+		background-color: $primary-color !important;
+		padding: $rem-base !important;
+		list-style:none !important;
+
+		li {
+			padding:4px !important;
+		}
+
+		li a {
+			font-size:rem-calc(16px) !important;
+		}
+
 	}
 
 
 }
 
-.menu-offcanvas-container{
-	@extend .pad;
 
-	ul{
-		margin-left:0px;
+.menu-item-has-children {
+	@extend .has-dropdown;
+	@extend .not-click;
+
+	a:hover{
+		color:$dark-text !important;
 	}
-	li{
-		@extend .landmark;
-		list-style:none;
-		padding-bottom: $rem-base;
-		border-bottom:1px solid $primary-color;
-		a {
-			display:block;
-			color: $white;
+	&:hover{
+		background-color:$primary-color;
+	}
+}
+
+
+
+@media only screen and (min-width: $large-breakpoint) {
+	.menu-primary-nav-container {	
+		li a{
+			font-size:22px !important;
+			line-height:22px !important;
 		}
 	}
 }
+
+.menu-primary-nav-container li:not(.has-form) a:not(.button) {
+	padding-right:0px !important;
+}
+
 
 .topbar__search--link, .topbar__checkout--link{
 	display:inline-block;
-	@extend .pad--half;
-	line-height:$rem-base*2;
-    transition: all 0.5;
-    width:$rem-base*2;
-    height:$rem-base*2;
 
-    a i {
-    	color:$dark-text;
-    	@include vendor(transition, all 0.25s);
-		&:hover {
-			color: lighten($dark-text, 20%);
-		}	
+
+    a {
+    	color:$dark-text;  
+    	padding:9px;
+		border-radius: 1000px;
+
+		@include vendor(transition, all 0.25s);
+
+	    &:hover {
+			color: $secondary-color;
+			background-color: $dark-text
+
+		}  	
+
     }
-    
+
+    i{
+    	font-size:20px;
+    	width:20px;
+    	height:20px;
+
+	}
 
 
 }
+
 
 .nav__icons{
 	text-align:right;
+	padding-top:8px;
 }
+
+
+
+// sidebar
 
 #sidebar{
 	padding-left:$rem-base;
@@ -80,13 +144,22 @@
 	}
 
 	h4{
-		font-size:rem-calc($rem-base*1.25);
+		font-size:rem-calc(22);
+		font-weight:400;
 	}
 
 	p, ul, li {
-		font-size:rem-calc($rem-base*0.9);
+		font-size:rem-calc(18px);
+		
+		font-weight:400;
+
+		a{
+			color:$dark-text;
+		}
 	}
 }
+
+//offcanvas
 
 .offcanvas__search--wrapper{
 	position:relative;
@@ -98,4 +171,14 @@
 		max-width:203px;
 	}
 
+}
+
+.menu-primary--offcanvas{
+	list-style:none;
+	padding:$rem-base/2;
+	li a{
+		font-size:20px;
+		margin-bottom:8px;
+		color:$white;
+	}
 }

@@ -1,26 +1,32 @@
 <?php get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
+<div class="pad-wrapper">
+	<div class="row">
+	<!-- Row for main content area -->
+		<div class="medium-9 columns" role="main">
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<header>
-				<h1 class="entry-title"><?php _e( 'File Not Found', 'foundationpress' ); ?></h1>
-			</header>
-			<div class="entry-content">
-				<div class="error">
-					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'foundationpress' ); ?></p>
-				</div>
-				<p><?php _e( 'Please try the following:', 'foundationpress' ); ?></p>
-				<ul>
-					<li><?php _e( 'Check your spelling', 'foundationpress' ); ?></li>
-					<li><?php printf( __( 'Return to the <a href="%s">home page</a>', 'foundationpress' ), home_url() ); ?></li>
-					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'foundationpress' ); ?></li>
-				</ul>
-			</div>
-		</article>
+		<?php if ( have_posts() ) : ?>
 
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+
+			<?php else : ?>
+				<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; // end have_posts() check ?>
+
+		<?php /* Display navigation to next/previous pages when applicable */ ?>
+		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+			<nav id="post-nav">
+				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+			</nav>
+		<?php } ?>
+
+		</div>
+		<?php get_sidebar(); ?>
 	</div>
-	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

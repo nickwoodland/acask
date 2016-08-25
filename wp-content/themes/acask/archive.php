@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="pad-wrapper">
 	<div class="row">
 	<!-- Row for main content area -->

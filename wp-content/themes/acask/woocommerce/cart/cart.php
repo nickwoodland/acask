@@ -75,12 +75,17 @@ do_action( 'woocommerce_before_cart' ); ?>
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
+						<div class="product-inc-vat__label">Total (inc VAT)</div>
 					</td>
 
 					<td class="product-price">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+							// echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
+						<div><?php echo "<strong>".wc_price($cart_item['line_subtotal']/$cart_item['quantity'])." </strong>"; ?></div>
+						<div><?php echo wc_price($cart_item['line_subtotal_tax']/$cart_item['quantity'])." (VAT)"; ?></div>
+
+						<div class="product-price__inc-vat"><?php echo wc_price(($cart_item['line_subtotal']+$cart_item['line_subtotal_tax'])/$cart_item['quantity']); ?></div>
 					</td>
 
 					<td class="product-quantity">
@@ -102,8 +107,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<td class="product-subtotal">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							//echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 						?>
+						<div><?php echo "<strong>".wc_price($cart_item['line_subtotal'])." </strong>"; ?></div>
+						<div><?php echo wc_price($cart_item['line_subtotal_tax'])." (VAT)"; ?></div>
+
+						<div class="product-subtotal__inc-vat"><?php echo wc_price(($cart_item['line_subtotal']+$cart_item['line_subtotal_tax'])); ?></div>
 					</td>
 				</tr>
 				<?php
